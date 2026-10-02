@@ -120,8 +120,12 @@ dart run tool/publish_release.dart --repo <path to this clone> \
 # then review, commit and push — pushing this repository publishes the version.
 ```
 
-Installers are tracked with **Git LFS** (`.gitattributes`): GitHub limits a
-regular file to 100 MB and an installer easily exceeds that threshold.
+Installers are stored as **regular git files** (NOT Git LFS): the
+application downloads them from `raw.githubusercontent.com`, which only
+serves the 133-byte LFS pointer for LFS-tracked files — the update's
+SHA-256 verification would always fail. This keeps GitHub's 100 MB
+per-file limit: a larger package must be split or served from a dedicated
+base (`EVB_DOWNLOAD_BASE` on the application side).
 
 ## Support
 
