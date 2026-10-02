@@ -1,0 +1,78 @@
+{
+  "releases": {
+    "1.0.1": {
+      "build": 2,
+      "date": "2026-10-01T22:23:19.960447Z",
+      "changes": [
+        {
+          "type": "maintenance",
+          "description": "Initial desktop release"
+        },
+        {
+          "type": "fix",
+          "description": "Fixed the system tray menu (right-click) on Windows"
+        }
+      ]
+    },
+    "1.0.2": {
+      "build": 3,
+      "date": "2026-10-01T22:23:29.062026Z",
+      "changes": [
+        {
+          "type": "security",
+          "description": "Only one backup agent can run per machine; a second launch now shows a clear notice"
+        }
+      ]
+    },
+    "1.1.0": {
+      "build": 5,
+      "date": "2026-10-01T23:01:46.023746Z",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Automatic updates: in-app download of new versions with verification and release history"
+        },
+        {
+          "type": "maintenance",
+          "description": "Version management, release manifests and CI template"
+        }
+      ]
+    },
+    "1.1.1": {
+      "build": 7,
+      "date": "2026-10-02T11:55:57.593614Z",
+      "changes": [
+        {
+          "type": "ui",
+          "description": "Release builds and the app are named EverBox (everbox.exe, EverBox.app, everbox packages)"
+        },
+        {
+          "type": "security",
+          "description": "Security hardening: update downloads pinned to the manifest host over https, random per-download temp folder, queue replay re-validated against the job folder, https-only endpoints, keychain quoting hardened, log sanitizer covers 40-char secrets"
+        }
+      ]
+    },
+    "1.1.2": {
+      "build": 11,
+      "date": "2026-10-02T16:09:52.741285Z",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Restore execution: agent downloads restore operations to a local folder (conflict policies, crash-safe writes, cancel); honest SSE copy (no more end-to-end claims)"
+        },
+        {
+          "type": "ui",
+          "description": "Settings: restore destination folder picker; History: failed/ignored files listed on partial runs"
+        },
+        {
+          "type": "feature",
+          "description": "Updates: the version shown in Settings follows CHANGELOG.json, new versions are checked on the public GitHub release repository, and updates can be installed automatically or manually"
+        },
+        {
+          "type": "maintenance",
+          "description": "Update probe compatibility: manifests served over loopback http are accepted for the local dev/test transport (remote http stays refused)"
+        }
+      ]
+    }
+  }
+}
