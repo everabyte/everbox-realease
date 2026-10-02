@@ -53,8 +53,8 @@
       ]
     },
     "1.1.2": {
-      "build": 11,
-      "date": "2026-10-02T16:09:52.741285Z",
+      "build": 12,
+      "date": "2026-10-02T16:29:03.823542Z",
       "changes": [
         {
           "type": "feature",
@@ -71,6 +71,10 @@
         {
           "type": "maintenance",
           "description": "Update probe compatibility: manifests served over loopback http are accepted for the local dev/test transport (remote http stays refused)"
+        },
+        {
+          "type": "feature",
+          "description": "Release notes: the release repository feed (version + description) is viewable in Settings, and the update notification carries what's new; one-command publishing organizes the release repository at every build"
         }
       ]
     }
