@@ -53,8 +53,8 @@
       ]
     },
     "1.1.2": {
-      "build": 12,
-      "date": "2026-10-02T16:29:03.823542Z",
+      "build": 13,
+      "date": "2026-10-02T17:57:04.811211Z",
       "changes": [
         {
           "type": "feature",
@@ -75,8 +75,13 @@
         {
           "type": "feature",
           "description": "Release notes: the release repository feed (version + description) is viewable in Settings, and the update notification carries what's new; one-command publishing organizes the release repository at every build"
+        },
+        {
+          "type": "fix",
+          "description": "Fix build failure after the file_picker 13 upgrade: directory and save dialogs now use the new static API"
         }
       ]
     }
   }
 }
+

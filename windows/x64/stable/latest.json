@@ -1,0 +1,18 @@
+{
+  "version": "1.1.2",
+  "build": 13,
+  "channel": "stable",
+  "platform": "windows",
+  "architecture": "x64",
+  "minimumSupportedVersion": "1.0.0",
+  "mandatory": false,
+  "publishedAt": "2026-10-02T18:12:13.958683Z",
+  "downloadUrl": "https://raw.githubusercontent.com/everabyte/everbox-realease/main/windows/x64/stable/1.1.2/everbox.exe",
+  "sha256": "70adc900a8ad13e248c1c5f3fbcee03dddcd2bd106331cf1c6557dbae6d33a2a",
+  "size": 12105463,
+  "releaseNotes": [
+    "Updates are now checked on the public release repository",
+    "Installation choice: automatic or manual, always yours",
+    "Release notes viewer in Settings (version + what's new)"
+  ]
+}
