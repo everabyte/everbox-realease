@@ -1,102 +1,101 @@
 # EverBox Desktop
 
-Application officielle de sauvegarde Everabyte pour Windows, macOS et Linux.
+The official Everabyte backup application for Windows, macOS and Linux.
 
-![Écran de connexion EverBox](./screenshot_login.png)
+![EverBox login screen](./screenshot_login.png)
 
-EverBox protège les dossiers de votre ordinateur en exécutant les jobs de
-sauvegarde configurés dans votre compte Everabyte. Les fichiers sont traités
-par le pipeline de stockage chiffré Everabyte et les sauvegardes incrémentales
-évitent de transférer à nouveau les fichiers inchangés.
+EverBox protects your computer folders by running the backup jobs configured
+in your Everabyte account. Files are processed through Everabyte's encrypted
+storage pipeline, while incremental backups avoid transferring unchanged
+files again.
 
-EverBox fait partie de l'écosystème [Everabyte](https://everabyte.com), une
-plateforme de stockage cloud conçue pour les particuliers, les équipes et les
-entreprises.
+EverBox is part of the [Everabyte](https://everabyte.com) ecosystem, a cloud
+storage platform designed for individuals, teams and businesses.
 
-## Fonctionnalités
+## Features
 
-- sauvegardes planifiées et exécution manuelle d'un job ;
-- sauvegardes incrémentales fondées sur le contenu des fichiers ;
-- reprise après interruption réseau et persistance de la file d'upload ;
-- exécution dans un processus unique, sans service système ni daemon séparé ;
-- fonctionnement en arrière-plan depuis le tray Windows/Linux ou la barre de
-  menus macOS ;
-- stockage des identifiants dans le coffre-fort natif du système : Credential
-  Manager, Keychain ou Secret Service ;
-- historique des exécutions, activité et diagnostics assainis ;
-- prise en charge de Windows 10/11, macOS et Linux.
+- scheduled backups and manual job execution;
+- incremental backups based on file content;
+- recovery after network interruptions and a persistent upload queue;
+- single-process operation, with no separate system service or daemon;
+- background operation from the Windows/Linux system tray or macOS menu bar;
+- credentials stored in the operating system's native secure store:
+  Credential Manager, Keychain or Secret Service;
+- execution history, activity logs and sanitized diagnostics;
+- support for Windows 10/11, macOS and Linux.
 
-## Prérequis
+## Requirements
 
-1. Un compte Everabyte actif.
-2. Une paire de clés API Everabyte autorisée à lire les buckets, dossiers et
-   fichiers, et à écrire dans le périmètre de sauvegarde.
-3. Un ordinateur compatible avec le système d'exploitation ciblé.
+1. An active Everabyte account.
+2. An Everabyte API key pair authorized to read buckets, folders and files,
+   and to write to the backup scope.
+3. A computer compatible with the target operating system.
 
-Le preset **Full Access** est recommandé pour une première configuration. Une
-clé limitée aux fichiers ne permet pas de créer ou de parcourir des sous-
-dossiers ; dans ce cas, la sauvegarde doit cibler la racine d'un bucket.
+The **Full Access** preset is recommended for the initial setup. A key limited
+to file access cannot create or browse subfolders; in that case, the backup
+must target the root of a bucket.
 
-## Installation et première sauvegarde
+## Installation and first backup
 
-1. Téléchargez le paquet correspondant à votre système depuis la page de
-   téléchargement Everabyte ou depuis la release fournie avec ce projet.
-2. Vérifiez la signature et le checksum publiés avec le paquet avant de
-   l'installer.
-3. Lancez EverBox et saisissez l'endpoint Everabyte ainsi que votre paire de
-   clés API. La clé est validée avant d'être enregistrée.
-4. Sélectionnez le bucket et le chemin cible autorisés.
-5. Associez les dossiers locaux aux jobs configurés dans votre compte
-   Everabyte, puis laissez EverBox exécuter le planning.
+1. Download the package for your operating system from the Everabyte download
+   page or from the release supplied with this project.
+2. Verify the signature and checksum published with the package before
+   installing it.
+3. Launch EverBox and enter the Everabyte endpoint and your API key pair. The
+   key is validated before it is stored.
+4. Select an authorized bucket and target path.
+5. Map local folders to the jobs configured in your Everabyte account, then
+   let EverBox follow the schedule.
 
-Fermer la fenêtre masque l'application dans le tray ou la barre de menus ;
-cela ne stoppe pas une sauvegarde en cours. Utilisez **Quitter EverBox** pour
-arrêter réellement l'application. L'état de la file est conservé afin de
-permettre une reprise au prochain lancement.
+Closing the window hides the application in the system tray or menu bar; it
+does not stop a backup in progress. Use **Quit EverBox** to stop the
+application completely. Queue state is preserved so that work can resume at
+the next launch.
 
-## Modèle de sécurité
+## Security model
 
-EverBox communique uniquement avec Everabyte. Les identifiants de fournisseurs
-tiers de stockage — par exemple S3, Wasabi, iDrive ou Backblaze — ne sont pas
-utilisés par l'application.
+EverBox communicates only with Everabyte. Credentials for third-party storage
+providers — such as S3, Wasabi, iDrive or Backblaze — are not used by the
+application.
 
-Les secrets sont conservés dans le coffre-fort du système d'exploitation et ne
-sont ni écrits en clair dans un fichier de configuration ni affichés dans les
-logs. Les connexions réseau utilisent HTTPS. Les chemins, les erreurs et les
-diagnostics sont validés ou assainis avant leur envoi ou leur export.
+Secrets are stored in the operating system's secure store and are never
+written in plain text to a configuration file or displayed in logs. Network
+connections use HTTPS. Paths, errors and diagnostic data are validated or
+sanitized before they are sent or exported.
 
-Everabyte documente une architecture de stockage zero-knowledge : les clés
-de chiffrement ne sont pas détenues par Everabyte et la plateforme ne peut pas
-lire le contenu des fichiers chiffrés. Consultez les [Conditions
-générales](https://everabyte.com/fr/terms-and-conditions) et la [documentation
-de sécurité](https://everabyte.com/en/help/privacy-compliance) pour les
-engagements et limites applicables au service.
+Everabyte documents a zero-knowledge storage architecture: encryption keys
+are not held by Everabyte, and the platform cannot read the content of
+encrypted files. See the [Terms and
+Conditions](https://everabyte.com/en/terms-and-conditions) and the [security
+documentation](https://everabyte.com/en/help/privacy-compliance) for the
+service commitments and applicable limitations.
 
-## Version publiée
+## Published version
 
-Les notes de version et les correctifs sont publiés avec chaque paquet distribué.
+This release corresponds to **EverBox Desktop 1.1.2 (build 9)**. Release
+notes and fixes are published with each distributed package.
 
-Les artefacts attendus sont :
+Expected artifacts include:
 
-| Système | Artefact courant |
+| Operating system | Typical artifact |
 | --- | --- |
-| Windows | `everbox.exe` ou installateur Windows |
-| macOS | `EverBox.app` ou image disque signée |
-| Linux | paquet `.deb`, `.rpm` ou AppImage selon la distribution |
+| Windows | `everbox.msix` or a Windows installer |
+| macOS | `EverBox.app` or a signed disk image |
+| Linux | `.deb`, `.rpm` or AppImage package, depending on the distribution |
 
-Les noms et formats peuvent varier selon la release. Utilisez toujours les
-fichiers de checksum et de signature fournis avec la version téléchargée.
+Names and formats may vary by release. Always use the checksum and signature
+files provided with the downloaded version.
 
-## Assistance
+## Support
 
-- Site web : [everabyte.com](https://everabyte.com)
-- Centre d'aide : [everabyte.com/en/help](https://everabyte.com/en/help)
-- Assistance : [support@everabyte.com](mailto:support@everabyte.com)
-- Problème de clé, de permission ou de bucket : vérifiez d'abord les scopes
-  de la clé et le périmètre de bucket défini dans Everabyte.
+- Website: [everabyte.com](https://everabyte.com)
+- Help Center: [everabyte.com/en/help](https://everabyte.com/en/help)
+- Support: [support@everabyte.com](mailto:support@everabyte.com)
+- Key, permission or bucket issues: first check the key scopes and the bucket
+  scope configured in Everabyte.
 
-## Droits d'auteur
+## Copyright
 
-Voir [`COPYRIGHT.md`](COPYRIGHT.md) pour l'avis de copyright, les marques et
-les conditions générales de distribution de l'application.
+See [`COPYRIGHT.md`](COPYRIGHT.md) for the copyright notice, trademarks and
+general distribution terms for the application.
 

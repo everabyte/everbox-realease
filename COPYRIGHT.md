@@ -1,49 +1,49 @@
-# Copyright et droits de distribution
+# Copyright and distribution rights
 
-Copyright © 2026 Everabyte Limited. Tous droits réservés.
+Copyright © 2026 Everabyte Limited. All rights reserved.
 
-EverBox, Everabyte, leurs logos, leurs noms de produits et leurs éléments
-graphiques sont des marques ou des signes distinctifs d'Everabyte Limited ou
-de ses concédants. Everabyte Limited est enregistrée au Royaume-Uni sous le
-numéro **16338558**, avec une adresse enregistrée à :
+EverBox, Everabyte, their logos, product names and visual elements are
+trademarks or distinctive signs of Everabyte Limited or its licensors.
+Everabyte Limited is registered in the United Kingdom under company number
+**16338558**, with its registered address at:
 
 > Suite 3173, 275 New North Road  
 > London N1 7AA  
 > United Kingdom
 
-## Propriété intellectuelle
+## Intellectual property
 
-Sauf indication contraire, le logiciel EverBox Desktop, son code, sa
-documentation, ses icônes, ses visuels, ses textes et ses éléments de marque
-sont la propriété d'Everabyte Limited ou sont utilisés sous licence.
+Unless stated otherwise, EverBox Desktop, its code, documentation, icons,
+visuals, text and brand assets are owned by Everabyte Limited or used under
+license.
 
-Ce dépôt et les paquets distribués avec l'application ne concèdent aucune
-licence générale de copie, de modification, de revente, de redistribution ou
-de création d'œuvres dérivées. Toute utilisation de l'application doit rester
-conforme aux conditions applicables du service Everabyte et au droit en
-vigueur. Les exceptions imposées par la loi restent applicables.
+This repository and the application packages distributed with it do not grant
+a general license to copy, modify, resell, redistribute or create derivative
+works. Use of the application must comply with the applicable Everabyte
+service terms and applicable law. Exceptions required by law remain
+applicable.
 
-Les fichiers et données sauvegardés par l'utilisateur restent la propriété de
-l'utilisateur ou de leurs ayants droit. L'utilisation d'EverBox ne transfère
-aucun droit de propriété intellectuelle sur ce contenu à Everabyte.
+Files and data backed up by a user remain the property of that user or their
+respective rights holders. Using EverBox does not transfer any intellectual
+property rights in that content to Everabyte.
 
-## Composants tiers
+## Third-party components
 
-EverBox s'appuie sur Flutter, Dart et des composants tiers. Ces composants
-restent régis par leurs propres licences ; ces licences prévalent pour le
-composant concerné. Les notices et licences tierces applicables doivent être
-consultées dans la distribution correspondante ou dans sa documentation.
+EverBox relies on Flutter, Dart and third-party components. Those components
+remain governed by their own licenses; those licenses prevail for the relevant
+component. Applicable third-party notices and licenses should be consulted in
+the corresponding distribution or its documentation.
 
-## Documents applicables
+## Applicable documents
 
-Cet avis est un avis de copyright et ne remplace pas les documents
-contractuels du service :
+This notice is a copyright notice and does not replace the service's
+contractual documents:
 
-- [Conditions générales Everabyte](https://everabyte.com/fr/terms-and-conditions)
-- [Politique de confidentialité et conformité](https://everabyte.com/en/help/privacy-compliance)
-- [Centre d'aide Everabyte](https://everabyte.com/en/help)
+- [Everabyte Terms and Conditions](https://everabyte.com/en/terms-and-conditions)
+- [Privacy and compliance](https://everabyte.com/en/help/privacy-compliance)
+- [Everabyte Help Center](https://everabyte.com/en/help)
 
-Pour toute question relative aux droits, aux licences ou à une autorisation de
-redistribution, contactez [support@everabyte.com](mailto:support@everabyte.com)
-avant toute publication ou réutilisation.
+For questions about rights, licensing or redistribution permission, contact
+[support@everabyte.com](mailto:support@everabyte.com) before publishing or
+reusing any part of this project.
 
