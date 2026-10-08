@@ -1,10 +1,13 @@
-# Creates the PUBLIC GitHub release for a version tag (v<version>+<build>).
+# Creates the PUBLIC GitHub release for a version tag (<version>+<build>,
+# NO "v" prefix — owner convention 2026-10-08).
 #
 # Trigger: push a tag pointing at the commit that carries the packages —
-#   git tag v1.1.2+13 && git push origin v1.1.2+13
+#   git tag 1.1.2+13 && git push origin 1.1.2+13
 # The tag tree must contain the installers published by the agent-backup
 # tool under <platform>/<arch>/stable/<version>/ plus the root
-# CHANGELOG.json (release notes feed).
+# CHANGELOG.json (release notes feed). Any tag that is not a valid
+# <version>+<build> matching CHANGELOG.json is refused by the staging
+# script (visible failure, nothing published).
 #
 # Assets are attached with STABLE, version-independent names so the
 # permanent links below always serve the newest build — these are the URLs
@@ -28,7 +31,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Tag to (re)publish (v<version>+<build>)'
+        description: 'Tag to (re)publish (<version>+<build>, e.g. 1.1.2+13)'
         required: true
 
 permissions:

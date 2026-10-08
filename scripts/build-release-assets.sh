@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #
 # build-release-assets.sh — stage the GitHub-release assets for ONE version
-# tag (v<version>+<build>) into dist/.
+# tag (<version>+<build>, NO "v" prefix) into dist/.
 #
 # Usage (from the repository root):
-#   bash scripts/build-release-assets.sh v1.1.2+13
+#   bash scripts/build-release-assets.sh 1.1.2+13
 #
 # Inputs — the tag must point at a commit whose tree contains the packages
 # published by the agent-backup tool under:
@@ -31,16 +31,13 @@ die() { echo "build-release-assets: ERROR: $*" >&2; exit 1; }
 warn() { echo "build-release-assets: WARNING: $*" >&2; }
 
 tag="${1:-}"
-[ -n "$tag" ] || die "usage: build-release-assets.sh v<version>+<build>"
+[ -n "$tag" ] || die "usage: build-release-assets.sh <version>+<build> (e.g. 1.1.2+13)"
 case "$tag" in
-  v*) ;;
-  *) die "tag must start with 'v' — got '$tag'" ;;
+  v*) die "tag must NOT carry the 'v' prefix (owner convention) — got '$tag'" ;;
 esac
-
-full="${tag#v}"
-case "$full" in
-  *+*) version="${full%%+*}"; build="${full##*+}" ;;
-  *) die "tag must be v<version>+<build> (e.g. v1.1.2+13) — got '$tag'" ;;
+case "$tag" in
+  *+*) version="${tag%%+*}"; build="${tag##*+}" ;;
+  *) die "tag must be <version>+<build> (e.g. 1.1.2+13) — got '$tag'" ;;
 esac
 [ -n "$version" ] && [ -n "$build" ] || die "empty version or build in '$tag'"
 case "$build" in

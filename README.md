@@ -112,7 +112,7 @@ Stable asset names per platform (identical in every release):
 
 ## Publishing a release
 
-One version = **one GitHub release** (`v<version>+<build>`, marked latest)
+One version = **one GitHub release** (`<version>+<build>`, marked latest)
 carrying **every platform built for that version**. Publishing runs in two
 layers that never interfere:
 
@@ -123,15 +123,15 @@ layers that never interfere:
    (from `CHANGELOG.json`), then creates the release:
 
    ```bash
-   git tag v1.1.2+13
-   git push origin v1.1.2+13        # ← the workflow creates the release
+   git tag 1.1.2+13
+   git push origin 1.1.2+13        # ← the workflow creates the release
    ```
 
    A platform built later (macOS, Linux) joins the **same** release: publish
    its package, then re-run the workflow (Actions → github-release → Run
    workflow, same tag) — missing assets are uploaded into the existing
    release. Locally the same result is one command:
-   `bash scripts/create-release.sh v1.1.2+13` (requires the `gh` CLI).
+   `bash scripts/create-release.sh 1.1.2+13` (requires the `gh` CLI).
 
 2. **Auto-update layer (raw.githubusercontent.com)** — unchanged: the app
    checks `<base>/<platform>/<arch>/stable/latest.json` on the `main`
@@ -146,7 +146,7 @@ dart run tool/publish_release.dart --repo <path to this clone> \
     --notes "What the version brings"
 # then review, commit, push main — and push the tag to create the release:
 git add -A && git commit -m "release 1.1.2+13" && git push origin main
-git tag v1.1.2+13 && git push origin v1.1.2+13
+git tag 1.1.2+13 && git push origin 1.1.2+13
 ```
 
 ## Automatic updates (in-app channel)

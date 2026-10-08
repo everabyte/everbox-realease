@@ -4,7 +4,7 @@
 # version tag, uploading the assets staged by build-release-assets.sh.
 #
 # Usage:
-#   bash scripts/create-release.sh v1.1.2+13 [--repo everabyte/everbox-realease]
+#   bash scripts/create-release.sh 1.1.2+13 [--repo everabyte/everbox-realease]
 #
 # - CI (workflow .github/workflows/github-release.yml): uses GH_TOKEN and
 #   --repo, no git credentials involved.
@@ -21,7 +21,7 @@ set -euo pipefail
 die() { echo "create-release: ERROR: $*" >&2; exit 1; }
 
 tag="${1:-}"
-[ -n "$tag" ] || die "usage: create-release.sh v<version>+<build> [--repo owner/name]"
+[ -n "$tag" ] || die "usage: create-release.sh <version>+<build> [--repo owner/name]"
 shift || true
 repo_flag=()
 while [ $# -gt 0 ]; do
