@@ -20,3 +20,7 @@
 CHANGELOG.json -text
 **/latest.json -text
 *.md text=auto
+
+# Scripts shell : LF strict (CRLF casse bash au checkout Windows).
+*.sh text eol=lf
+*.yml text=auto

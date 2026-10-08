@@ -1,0 +1,55 @@
+# Creates the PUBLIC GitHub release for a version tag (v<version>+<build>).
+#
+# Trigger: push a tag pointing at the commit that carries the packages —
+#   git tag v1.1.2+13 && git push origin v1.1.2+13
+# The tag tree must contain the installers published by the agent-backup
+# tool under <platform>/<arch>/stable/<version>/ plus the root
+# CHANGELOG.json (release notes feed).
+#
+# Assets are attached with STABLE, version-independent names so the
+# permanent links below always serve the newest build — these are the URLs
+# used on everabyte.com:
+#   https://github.com/everabyte/everbox-realease/releases/latest
+#   https://github.com/everabyte/everbox-realease/releases/latest/download/EverBox-Setup-x64.exe
+#   https://github.com/everabyte/everbox-realease/releases/latest/download/SHA256SUMS.txt
+#
+# Re-running for the same tag (a late macOS/Linux build) uploads the
+# missing assets into the EXISTING release — one release always carries
+# every platform. The release is marked latest.
+#
+# The in-app AUTO-UPDATE channel is untouched: latest.json keeps pointing
+# at raw.githubusercontent.com (same-host pin enforced by the app).
+
+name: github-release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to (re)publish (v<version>+<build>)'
+        required: true
+
+permissions:
+  contents: write
+
+env:
+  RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the tagged commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.RELEASE_TAG }}
+
+      - name: Stage assets (stable names, SHA256SUMS, release notes)
+        run: bash scripts/build-release-assets.sh "$RELEASE_TAG"
+
+      - name: Create or update the GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/create-release.sh "$RELEASE_TAG" --repo "${{ github.repository }}"
