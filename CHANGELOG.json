@@ -91,12 +91,30 @@
       ]
     },
     "1.2.0": {
-      "build": 16,
-      "date": "2026-10-13T18:49:37.482613Z",
+      "build": 18,
+      "date": "2026-10-14T12:31:19.018296Z",
       "changes": [
         {
           "type": "feature",
           "description": "Online storage card with quota and remaining space, clean History/Activity/Backups when connecting with new credentials, automatic updates now stop the app, install and relaunch"
+        },
+        {
+          "type": "feature",
+          "description": "Backups page: remove a backup job from the row menu (confirmation dialog; files already backed up stay in the bucket)"
+        },
+        {
+          "type": "fix",
+          "description": "Advanced > Device: show the actual app version and the real last synchronization time"
+        }
+      ]
+    },
+    "1.3.0": {
+      "build": 19,
+      "date": "2026-10-14T14:36:08.312327Z",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Sign in with Everabyte: browser sign-in (OAuth PKCE), automatic device registration with backup-device quota, periodic device heartbeat"
         }
       ]
     }
