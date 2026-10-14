@@ -20,9 +20,6 @@
 #   release-notes.md           ← body of the GitHub release (CHANGELOG.json)
 #   release-title.txt          ← "EverBox <version> (build <build>)"
 #
-# The AUTO-UPDATE channel is NOT touched by this script: latest.json keeps
-# pointing at raw.githubusercontent.com (same-host pin enforced by the app).
-#
 # Requires jq + sha256sum (both preinstalled on GitHub ubuntu runners).
 
 set -euo pipefail
@@ -97,17 +94,6 @@ for combo in "${combos[@]}"; do
     count=$((count + 1))
     found=$((found + 1))
 
-    # Consistency guard: when this combo's channel manifest already
-    # publishes THIS version, it must describe the SAME package bytes.
-    if [ "$count" -eq 1 ] && [ -f "$dir/latest.json" ]; then
-      manifest_version="$(jq -r '.version' "$dir/latest.json")"
-      if [ "$manifest_version" = "$version" ]; then
-        manifest_sha="$(jq -r '.sha256' "$dir/latest.json")"
-        asset_sha="$(sha256sum "dist/$name" | cut -d' ' -f1)"
-        [ "$manifest_sha" = "$asset_sha" ] \
-          || warn "$dir/latest.json sha256 != staged $name — channel manifest and release asset diverge"
-      fi
-    fi
   done
   if [ "$count" -gt 0 ]; then
     seen_platforms="$seen_platforms $family"

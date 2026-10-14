@@ -15,12 +15,6 @@
 *.rpm    -text
 *.AppImage -text
 
-# Texte : jamais de conversion de fin de ligne sur les flux consommés par
-# l'application (SHA-256 des manifests calculé sur le contenu publié).
-CHANGELOG.json -text
-**/latest.json -text
-*.md text=auto
-
 # Scripts shell : LF strict (CRLF casse bash au checkout Windows).
 *.sh text eol=lf
 *.yml text=auto

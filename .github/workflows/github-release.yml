@@ -19,9 +19,6 @@
 # Re-running for the same tag (a late macOS/Linux build) uploads the
 # missing assets into the EXISTING release — one release always carries
 # every platform. The release is marked latest.
-#
-# The in-app AUTO-UPDATE channel is untouched: latest.json keeps pointing
-# at raw.githubusercontent.com (same-host pin enforced by the app).
 
 name: github-release
 

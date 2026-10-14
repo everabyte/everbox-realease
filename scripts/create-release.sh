@@ -48,7 +48,7 @@ mapfile -t assets < <(find dist -maxdepth 1 -type f \( -name 'EverBox-*' -o -nam
 if gh release view "$tag" "${repo_flag[@]}" >/dev/null 2>&1; then
   echo "release $tag already exists — uploading/refreshing ${#assets[@]} asset(s) into it"
   gh release upload "$tag" "${assets[@]}" --clobber "${repo_flag[@]}"
-  gh release edit "$tag" --notes-file dist/release-notes.md "${repo_flag[@]}"
+  gh release edit "$tag" --notes-file dist/release-notes.md --latest "${repo_flag[@]}"
 else
   echo "creating release $tag — ${#assets[@]} asset(s)"
   gh release create "$tag" "${assets[@]}" \
