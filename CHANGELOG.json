@@ -53,8 +53,8 @@
       ]
     },
     "1.1.2": {
-      "build": 13,
-      "date": "2026-10-02T17:57:04.811211Z",
+      "build": 15,
+      "date": "2026-10-06T19:33:59.110733Z",
       "changes": [
         {
           "type": "feature",
@@ -79,9 +79,26 @@
         {
           "type": "fix",
           "description": "Fix build failure after the file_picker 13 upgrade: directory and save dialogs now use the new static API"
+        },
+        {
+          "type": "fix",
+          "description": "Fixed: EverBox no longer shows a black window at startup on macOS — data is now stored inside the App Sandbox container and outbound network access is enabled"
+        },
+        {
+          "type": "ui",
+          "description": "Rename upload throttle setting to 'Upload speed' (Mbps = network capacity) instead of 'Bandwidth' to remove ambiguity with data transfer quotas"
+        }
+      ]
+    },
+    "1.2.0": {
+      "build": 16,
+      "date": "2026-10-13T18:49:37.482613Z",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Online storage card with quota and remaining space, clean History/Activity/Backups when connecting with new credentials, automatic updates now stop the app, install and relaunch"
         }
       ]
     }
   }
 }
-
