@@ -1,13 +1,17 @@
 # Creates the PUBLIC GitHub release for a version tag (<version>+<build>,
 # NO "v" prefix — owner convention 2026-10-08).
 #
-# Trigger: push a tag pointing at the commit that carries the packages —
+# Trigger: push a tag naming the release —
 #   git tag 1.1.2+13 && git push origin 1.1.2+13
-# The tag tree must contain the installers published by the agent-backup
-# tool under <platform>/<arch>/stable/<version>/ plus the root
-# CHANGELOG.json (release notes feed). Any tag that is not a valid
-# <version>+<build> matching CHANGELOG.json is refused by the staging
-# script (visible failure, nothing published).
+# The packages are read from the repository's main branch under either
+# supported layout (arch-ful or arch-less, folder named <version> or the
+# full tag), plus the root CHANGELOG.json (release notes feed). Any tag
+# that is not a valid <version>+<build> matching CHANGELOG.json is refused
+# by the staging script (visible failure, nothing published).
+#
+# Every platform found for the version joins the SAME release — Windows,
+# macOS (arm64/x64) and every Linux format (.deb, .rpm, AppImage) are
+# picked up automatically whenever their package files exist.
 #
 # Assets are attached with STABLE, version-independent names so the
 # permanent links below always serve the newest build — these are the URLs
@@ -41,10 +45,15 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the tagged commit
+      - name: Checkout main (the branch that carries the packages)
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.RELEASE_TAG }}
+          # The versioned packages and CHANGELOG.json live on main; the tag
+          # only NAMES the release. Checking out main is also what lets a
+          # platform committed after the tag (late Linux/macOS build) join
+          # the existing release on a re-run — the tag's frozen tree would
+          # keep missing it.
+          ref: main
 
       - name: Stage assets (stable names, SHA256SUMS, release notes)
         run: bash scripts/build-release-assets.sh "$RELEASE_TAG"

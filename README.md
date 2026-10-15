@@ -50,6 +50,7 @@ the links used on [everabyte.com](https://everabyte.com):
 | macOS (Apple Silicon) | <https://github.com/everabyte/everbox-realease/releases/latest/download/EverBox-macOS-arm64.dmg> |
 | macOS (Intel) | <https://github.com/everabyte/everbox-realease/releases/latest/download/EverBox-macOS-x64.dmg> |
 | Linux (amd64, .deb) | <https://github.com/everabyte/everbox-realease/releases/latest/download/EverBox-Linux-amd64.deb> |
+| Linux (amd64, .rpm) | <https://github.com/everabyte/everbox-realease/releases/latest/download/EverBox-Linux-amd64.rpm> |
 | Linux (amd64, AppImage) | <https://github.com/everabyte/everbox-realease/releases/latest/download/EverBox-Linux-amd64.AppImage> |
 | Linux (arm64, .deb) | <https://github.com/everabyte/everbox-realease/releases/latest/download/EverBox-Linux-arm64.deb> |
 | Checksums | <https://github.com/everabyte/everbox-realease/releases/latest/download/SHA256SUMS.txt> |
@@ -108,7 +109,7 @@ Stable asset names per platform (identical in every release):
 | --- | --- |
 | Windows (x64) | `EverBox-Setup-x64.exe` |
 | macOS (Apple Silicon / Intel) | `EverBox-macOS-arm64.dmg` / `EverBox-macOS-x64.dmg` |
-| Linux (amd64 / arm64) | `EverBox-Linux-amd64.deb`, `EverBox-Linux-amd64.AppImage`, `EverBox-Linux-arm64.deb` |
+| Linux (amd64 / arm64) | `EverBox-Linux-amd64.deb`, `EverBox-Linux-amd64.rpm`, `EverBox-Linux-amd64.AppImage`, `EverBox-Linux-arm64.deb` — every format built for the version is picked up automatically from `linux/<arch>/stable/<version>/` |
 
 ## Build and release
 
@@ -119,15 +120,20 @@ links above therefore always resolve to the newest published build.
 
 The installers must first be available in this repository, under their
 versioned platform directory, and `CHANGELOG.json` must contain the same
-version and build number:
+version and build number. Per platform+arch, the FIRST existing directory
+wins (so a `<version>+<build>` folder is preferred over the plain
+`<version>` one):
 
 ```text
-windows/x64/stable/<version>/
-macos/arm64/stable/<version>/
-macos/x64/stable/<version>/
-linux/amd64/stable/<version>/
-linux/arm64/stable/<version>/
+<platform>/<arch>/stable/<version>+<build>/   ← layout written by the
+<platform>/<arch>/stable/<version>/             agent-backup publisher
+<platform>/stable/<version>+<build>/           ← arch-less manual drops
+<platform>/stable/<version>/                     (defaults: x64 / arm64 / amd64)
 ```
+
+Every installer file found in the selected directory joins the release
+automatically — `.deb`, `.rpm` and `.AppImage` side by side for Linux, both
+macOS architectures when both are built.
 
 Publish a build as follows:
 
