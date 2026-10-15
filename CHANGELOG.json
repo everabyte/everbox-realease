@@ -109,12 +109,24 @@
       ]
     },
     "1.3.0": {
-      "build": 19,
-      "date": "2026-10-14T14:36:08.312327Z",
+      "build": 22,
+      "date": "2026-10-15T10:53:27.880189Z",
       "changes": [
         {
           "type": "feature",
           "description": "Sign in with Everabyte: browser sign-in (OAuth PKCE), automatic device registration with backup-device quota, periodic device heartbeat"
+        },
+        {
+          "type": "maintenance",
+          "description": "Release pipeline: real multi-OS CI packaging (Windows Inno installer, macOS signed+notarized DMG, Linux deb), latest.json stays atomic"
+        },
+        {
+          "type": "feature",
+          "description": "Windows VSS: point-in-time volume snapshots for locked files (engine-level VolumeSnapshotProvider, no OS knowledge in backup_core); crash-recovery and snapshot tests; multi-OS field testing plan"
+        },
+        {
+          "type": "feature",
+          "description": "Linux multi-format publishing: .deb + .rpm + AppImage auto-detected and published together, download page offers every format"
         }
       ]
     }
