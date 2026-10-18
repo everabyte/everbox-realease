@@ -269,8 +269,8 @@
       ]
     },
     "1.4.0": {
-      "build": 39,
-      "date": "2026-10-17T11:14:49.394818Z",
+      "build": 43,
+      "date": "2026-10-18T17:01:05.742507Z",
       "changes": [
         {
           "type": "feature",
@@ -319,9 +319,65 @@
         {
           "type": "security",
           "description": "Renforce la protection des chemins de restauration et bloque les téléchargements dépassant la taille attendue."
+        },
+        {
+          "type": "feature",
+          "description": "Restoration Passport: scheduled verification tests restore a sampled point into an isolated temp directory (SHA-256 validated), then clean it up"
+        },
+        {
+          "type": "feature",
+          "description": "Optional quiet hours: verification tests wait and run at the end of the local window you choose — regular backups are never delayed"
+        },
+        {
+          "type": "fix",
+          "description": "Quiet hours: an invalid time entry no longer flips the switch off while the saved window stays active"
+        },
+        {
+          "type": "fix",
+          "description": "Queue fairness: your requested restore always runs before a scheduled verification test, and test logs no longer contain local folder paths"
         }
       ],
       "builds": [
+        {
+          "build": 43,
+          "date": "2026-10-18T17:01:05.742507Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Queue fairness: your requested restore always runs before a scheduled verification test, and test logs no longer contain local folder paths"
+            }
+          ]
+        },
+        {
+          "build": 42,
+          "date": "2026-10-18T14:10:36.448470Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Quiet hours: an invalid time entry no longer flips the switch off while the saved window stays active"
+            }
+          ]
+        },
+        {
+          "build": 41,
+          "date": "2026-10-18T13:42:15.341308Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Optional quiet hours: verification tests wait and run at the end of the local window you choose — regular backups are never delayed"
+            }
+          ]
+        },
+        {
+          "build": 40,
+          "date": "2026-10-18T11:26:57.404243Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Restoration Passport: scheduled verification tests restore a sampled point into an isolated temp directory (SHA-256 validated), then clean it up"
+            }
+          ]
+        },
         {
           "build": 39,
           "date": "2026-10-17T11:14:49.394818Z",
