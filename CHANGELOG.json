@@ -269,8 +269,8 @@
       ]
     },
     "1.4.0": {
-      "build": 43,
-      "date": "2026-10-18T17:01:05.742507Z",
+      "build": 44,
+      "date": "2026-10-18T20:15:36.179497Z",
       "changes": [
         {
           "type": "feature",
@@ -335,9 +335,23 @@
         {
           "type": "fix",
           "description": "Queue fairness: your requested restore always runs before a scheduled verification test, and test logs no longer contain local folder paths"
+        },
+        {
+          "type": "fix",
+          "description": "Release CI: installer signature hard-gate (fail before publishing when not Valid) and honest unsigned warning — fixes unsigned 1.4.0+43 being blocked by Windows as invalid signature"
         }
       ],
       "builds": [
+        {
+          "build": 44,
+          "date": "2026-10-18T20:15:36.179497Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Release CI: installer signature hard-gate (fail before publishing when not Valid) and honest unsigned warning — fixes unsigned 1.4.0+43 being blocked by Windows as invalid signature"
+            }
+          ]
+        },
         {
           "build": 43,
           "date": "2026-10-18T17:01:05.742507Z",
@@ -489,6 +503,284 @@
             {
               "type": "feature",
               "description": "Recovery Radar: recovery readiness on the dashboard (recommended recovery point, verification state, measured restore estimate), alert banner on detected mass-change incidents, and aggregate recovery signals reported on each backup run"
+            }
+          ]
+        }
+      ]
+    },
+    "1.4.1": {
+      "build": 45,
+      "date": "2026-10-18T23:51:40.005840Z",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Pre-backup analysis, exclusion editor and resolution center"
+        }
+      ],
+      "builds": [
+        {
+          "build": 45,
+          "date": "2026-10-18T23:51:40.005840Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Pre-backup analysis, exclusion editor and resolution center"
+            }
+          ]
+        }
+      ]
+    },
+    "1.4.2": {
+      "build": 46,
+      "date": "2026-10-19T00:27:17.128465Z",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Resource profiles and removable-drive detection"
+        }
+      ],
+      "builds": [
+        {
+          "build": 46,
+          "date": "2026-10-19T00:27:17.128465Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Resource profiles and removable-drive detection"
+            }
+          ]
+        }
+      ]
+    },
+    "1.4.3": {
+      "build": 48,
+      "date": "2026-10-19T04:43:18.300685Z",
+      "changes": [
+        {
+          "type": "ui",
+          "description": "Rebuild Before backup, Resolve and Resources on the shared design system"
+        },
+        {
+          "type": "ui",
+          "description": "Rebuild Manage exclusions on the design system: own screen with a back button, readable labels, responsive rules and presets"
+        }
+      ],
+      "builds": [
+        {
+          "build": 48,
+          "date": "2026-10-19T04:43:18.300685Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Rebuild Manage exclusions on the design system: own screen with a back button, readable labels, responsive rules and presets"
+            }
+          ]
+        },
+        {
+          "build": 47,
+          "date": "2026-10-19T04:19:02.344260Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Rebuild Before backup, Resolve and Resources on the shared design system"
+            }
+          ]
+        }
+      ]
+    },
+    "1.4.4": {
+      "build": 55,
+      "date": "2026-10-19T11:28:22.734420Z",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Native restore from the desktop: pick a point, preview, confirm"
+        },
+        {
+          "type": "ui",
+          "description": "Redesign Before backup: verdict hero, coverage bar, rich backup cards, per-rule exclusion bars and storage forecast"
+        },
+        {
+          "type": "fix",
+          "description": "Activity no longer floods on a persistent restore-queue server error: exponential backoff with jitter, throttled journaling (one line per outage + slow reminder + single recovery line) and classified human-readable messages; permanent auth/validation errors logged once."
+        },
+        {
+          "type": "ui",
+          "description": "Bring Overview, Backups, Active run, History, Activity and Settings onto the shared design system"
+        },
+        {
+          "type": "ui",
+          "description": "Bring the sign-in rail, onboarding, update surfaces and the add-a-folder flow onto the shared design system"
+        },
+        {
+          "type": "fix",
+          "description": "Resources screen: real app bar with a way back, live model updates (re-check was a no-op), preset cards showing their real numbers"
+        },
+        {
+          "type": "fix",
+          "description": "Engine integrity fixes from the cross-service audit: after canceling a run the next one really uploads; a network blip at startup keeps the queued uploads and retries; changing the conflict policy invalidates the restore preview token; Linux release smoke reads dpkg Status correctly."
+        }
+      ],
+      "builds": [
+        {
+          "build": 55,
+          "date": "2026-10-19T11:28:22.734420Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Engine integrity fixes from the cross-service audit: after canceling a run the next one really uploads; a network blip at startup keeps the queued uploads and retries; changing the conflict policy invalidates the restore preview token; Linux release smoke reads dpkg Status correctly."
+            }
+          ]
+        },
+        {
+          "build": 54,
+          "date": "2026-10-19T11:25:40.463384Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Resources screen: real app bar with a way back, live model updates (re-check was a no-op), preset cards showing their real numbers"
+            }
+          ]
+        },
+        {
+          "build": 53,
+          "date": "2026-10-19T10:59:59.640595Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Bring the sign-in rail, onboarding, update surfaces and the add-a-folder flow onto the shared design system"
+            }
+          ]
+        },
+        {
+          "build": 52,
+          "date": "2026-10-19T09:03:27.696373Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Bring Overview, Backups, Active run, History, Activity and Settings onto the shared design system"
+            }
+          ]
+        },
+        {
+          "build": 51,
+          "date": "2026-10-19T06:53:47.036538Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Activity no longer floods on a persistent restore-queue server error: exponential backoff with jitter, throttled journaling (one line per outage + slow reminder + single recovery line) and classified human-readable messages; permanent auth/validation errors logged once."
+            }
+          ]
+        },
+        {
+          "build": 50,
+          "date": "2026-10-19T05:08:56.421060Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Redesign Before backup: verdict hero, coverage bar, rich backup cards, per-rule exclusion bars and storage forecast"
+            }
+          ]
+        },
+        {
+          "build": 49,
+          "date": "2026-10-19T04:44:05.664550Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Native restore from the desktop: pick a point, preview, confirm"
+            }
+          ]
+        }
+      ]
+    },
+    "1.5.0": {
+      "build": 61,
+      "date": "2026-10-19T16:40:33.352072Z",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Settings > Network now really limits transfers: the upload cap and parallelism are persisted and restored, the battery/metered guard is finally enforced on the upload path, and the ceiling is a real adjustable maximum"
+        },
+        {
+          "type": "fix",
+          "description": "Engine integrity hardening from the cross-service audit: a run interrupted before its queue was built is rescanned on restart instead of finishing empty-success; a file modified between scan and upload is re-hashed so the manifest always matches the bytes sent; a different disk at the backup folder fails the run before any scan or pruning; block-deduplicated copies keep their block references restorable; the preflight storage figure is labeled as the worst-case bound."
+        },
+        {
+          "type": "fix",
+          "description": "Linux rpm packages install through the system installer like deb (the updater refused them before)."
+        },
+        {
+          "type": "maintenance",
+          "description": "Troubleshooting: how to read 'restore failed: HTTP 500' and a 10-second server check."
+        },
+        {
+          "type": "ui",
+          "description": "Settings > Network rebuilt with the same row anatomy as the other sections; fixed the narrow-window crash in the section strip"
+        },
+        {
+          "type": "ui",
+          "description": "Upload speed: jauge continue en Mbps jusqu'a 1 Gbps (Unlimited toujours affiche)"
+        }
+      ],
+      "builds": [
+        {
+          "build": 61,
+          "date": "2026-10-19T16:40:33.352072Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Upload speed: jauge continue en Mbps jusqu'a 1 Gbps (Unlimited toujours affiche)"
+            }
+          ]
+        },
+        {
+          "build": 60,
+          "date": "2026-10-19T16:01:59.275780Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Settings > Network rebuilt with the same row anatomy as the other sections; fixed the narrow-window crash in the section strip"
+            }
+          ]
+        },
+        {
+          "build": 59,
+          "date": "2026-10-19T15:23:04.205776Z",
+          "changes": [
+            {
+              "type": "maintenance",
+              "description": "Troubleshooting: how to read 'restore failed: HTTP 500' and a 10-second server check."
+            }
+          ]
+        },
+        {
+          "build": 58,
+          "date": "2026-10-19T14:51:51.475626Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Linux rpm packages install through the system installer like deb (the updater refused them before)."
+            }
+          ]
+        },
+        {
+          "build": 57,
+          "date": "2026-10-19T13:41:26.159685Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Engine integrity hardening from the cross-service audit: a run interrupted before its queue was built is rescanned on restart instead of finishing empty-success; a file modified between scan and upload is re-hashed so the manifest always matches the bytes sent; a different disk at the backup folder fails the run before any scan or pruning; block-deduplicated copies keep their block references restorable; the preflight storage figure is labeled as the worst-case bound."
+            }
+          ]
+        },
+        {
+          "build": 56,
+          "date": "2026-10-19T12:02:59.769188Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Settings > Network now really limits transfers: the upload cap and parallelism are persisted and restored, the battery/metered guard is finally enforced on the upload path, and the ceiling is a real adjustable maximum"
             }
           ]
         }
