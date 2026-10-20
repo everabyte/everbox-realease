@@ -695,8 +695,8 @@
       ]
     },
     "1.5.0": {
-      "build": 61,
-      "date": "2026-10-19T16:40:33.352072Z",
+      "build": 63,
+      "date": "2026-10-19T20:20:29.616198Z",
       "changes": [
         {
           "type": "feature",
@@ -721,9 +721,37 @@
         {
           "type": "ui",
           "description": "Upload speed: jauge continue en Mbps jusqu'a 1 Gbps (Unlimited toujours affiche)"
+        },
+        {
+          "type": "ui",
+          "description": "Paginated History and Activity lists (10 per page) with a shared EvbPaginationBar"
+        },
+        {
+          "type": "ui",
+          "description": "History and Activity lists paginated (10 per page) with shared EvbPaginationBar + tests"
         }
       ],
       "builds": [
+        {
+          "build": 63,
+          "date": "2026-10-19T20:20:29.616198Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "History and Activity lists paginated (10 per page) with shared EvbPaginationBar + tests"
+            }
+          ]
+        },
+        {
+          "build": 62,
+          "date": "2026-10-19T20:06:58.137764Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Paginated History and Activity lists (10 per page) with a shared EvbPaginationBar"
+            }
+          ]
+        },
         {
           "build": 61,
           "date": "2026-10-19T16:40:33.352072Z",
@@ -781,6 +809,86 @@
             {
               "type": "feature",
               "description": "Settings > Network now really limits transfers: the upload cap and parallelism are persisted and restored, the battery/metered guard is finally enforced on the upload path, and the ceiling is a real adjustable maximum"
+            }
+          ]
+        }
+      ]
+    },
+    "1.6.0": {
+      "build": 65,
+      "date": "2026-10-19T21:47:14.747227Z",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Backups are now organised by machine: each desktop agent writes inside a folder named after the machine (the hostname), and a backup can mix folders and individual files while keeping the local tree exactly as it is."
+        },
+        {
+          "type": "feature",
+          "description": "Remote device control: console can block/unblock the agent (lock screen + 403 enforcement), wipe local agent data, force a sync, pause/resume backups; device auto-registers on heartbeat for manual API keys"
+        }
+      ],
+      "builds": [
+        {
+          "build": 65,
+          "date": "2026-10-19T21:47:14.747227Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Remote device control: console can block/unblock the agent (lock screen + 403 enforcement), wipe local agent data, force a sync, pause/resume backups; device auto-registers on heartbeat for manual API keys"
+            }
+          ]
+        },
+        {
+          "build": 64,
+          "date": "2026-10-19T21:42:30.722800Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Backups are now organised by machine: each desktop agent writes inside a folder named after the machine (the hostname), and a backup can mix folders and individual files while keeping the local tree exactly as it is."
+            }
+          ]
+        }
+      ]
+    },
+    "1.6.1": {
+      "build": 66,
+      "date": "2026-10-19T23:10:11.667705Z",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Re-keying a backup content tree now prunes the superseded manifest rows (with the explicit mass-prune confirmation) instead of leaving two rows for one file; a genuine deletion keeps the mass-prune guard armed."
+        }
+      ],
+      "builds": [
+        {
+          "build": 66,
+          "date": "2026-10-19T23:10:11.667705Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Re-keying a backup content tree now prunes the superseded manifest rows (with the explicit mass-prune confirmation) instead of leaving two rows for one file; a genuine deletion keeps the mass-prune guard armed."
+            }
+          ]
+        }
+      ]
+    },
+    "1.6.2": {
+      "build": 67,
+      "date": "2026-10-20T00:01:09.063795Z",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "The source tree is now preserved for EVERY backup (the folders assigned before this feature keep their name too): the switch is a manifest re-key, not a re-upload. The machine hostname is displayed in Settings."
+        }
+      ],
+      "builds": [
+        {
+          "build": 67,
+          "date": "2026-10-20T00:01:09.063795Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "The source tree is now preserved for EVERY backup (the folders assigned before this feature keep their name too): the switch is a manifest re-key, not a re-upload. The machine hostname is displayed in Settings."
             }
           ]
         }
