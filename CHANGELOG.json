@@ -873,15 +873,71 @@
       ]
     },
     "1.6.2": {
-      "build": 67,
-      "date": "2026-10-20T00:01:09.063795Z",
+      "build": 71,
+      "date": "2026-10-21T11:37:45.274201Z",
       "changes": [
         {
           "type": "fix",
           "description": "The source tree is now preserved for EVERY backup (the folders assigned before this feature keep their name too): the switch is a manifest re-key, not a re-upload. The machine hostname is displayed in Settings."
+        },
+        {
+          "type": "fix",
+          "description": "Reliable restore: a non-empty restore can never succeed over an empty or incomplete plan; explicit destination choice (original location or picked folder) with live progress and final result; keep-both conflicts now write nom_backup.ext"
+        },
+        {
+          "type": "fix",
+          "description": "Fixed a crash when confirming a restore (the Restore page has no Scaffold host): the confirmation now reports failures inline and a queued card tracks the restore from confirmation to completion"
+        },
+        {
+          "type": "feature",
+          "description": "Real-time progress on the Overview during a backup and system notifications for restores: one when the engine picks the operation up, one with the final result"
+        },
+        {
+          "type": "fix",
+          "description": "When a download is answered by the web app instead of the API (missing session cookie), the error now says exactly what to check: the endpoint or edge routing must point at the Everabyte API"
         }
       ],
       "builds": [
+        {
+          "build": 71,
+          "date": "2026-10-21T11:37:45.274201Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "When a download is answered by the web app instead of the API (missing session cookie), the error now says exactly what to check: the endpoint or edge routing must point at the Everabyte API"
+            }
+          ]
+        },
+        {
+          "build": 70,
+          "date": "2026-10-21T10:15:36.518500Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Real-time progress on the Overview during a backup and system notifications for restores: one when the engine picks the operation up, one with the final result"
+            }
+          ]
+        },
+        {
+          "build": 69,
+          "date": "2026-10-21T09:02:34.920255Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Fixed a crash when confirming a restore (the Restore page has no Scaffold host): the confirmation now reports failures inline and a queued card tracks the restore from confirmation to completion"
+            }
+          ]
+        },
+        {
+          "build": 68,
+          "date": "2026-10-20T22:22:35.606764Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Reliable restore: a non-empty restore can never succeed over an empty or incomplete plan; explicit destination choice (original location or picked folder) with live progress and final result; keep-both conflicts now write nom_backup.ext"
+            }
+          ]
+        },
         {
           "build": 67,
           "date": "2026-10-20T00:01:09.063795Z",
