@@ -873,8 +873,8 @@
       ]
     },
     "1.6.2": {
-      "build": 71,
-      "date": "2026-10-21T11:37:45.274201Z",
+      "build": 72,
+      "date": "2026-10-22T16:34:51.831580Z",
       "changes": [
         {
           "type": "fix",
@@ -895,9 +895,23 @@
         {
           "type": "fix",
           "description": "When a download is answered by the web app instead of the API (missing session cookie), the error now says exactly what to check: the endpoint or edge routing must point at the Everabyte API"
+        },
+        {
+          "type": "fix",
+          "description": "macOS: the app now starts (menu bar icon fixed, data stored in the right sandbox folder) and backups, pre-backup analysis and restarts after a crash find files in folders reached through a symbolic link"
         }
       ],
       "builds": [
+        {
+          "build": 72,
+          "date": "2026-10-22T16:34:51.831580Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "macOS: the app now starts (menu bar icon fixed, data stored in the right sandbox folder) and backups, pre-backup analysis and restarts after a crash find files in folders reached through a symbolic link"
+            }
+          ]
+        },
         {
           "build": 71,
           "date": "2026-10-21T11:37:45.274201Z",
