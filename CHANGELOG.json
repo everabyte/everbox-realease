@@ -873,8 +873,8 @@
       ]
     },
     "1.6.2": {
-      "build": 72,
-      "date": "2026-10-22T16:34:51.831580Z",
+      "build": 106,
+      "date": "2026-11-09T14:52:49.446156Z",
       "changes": [
         {
           "type": "fix",
@@ -899,9 +899,485 @@
         {
           "type": "fix",
           "description": "macOS: the app now starts (menu bar icon fixed, data stored in the right sandbox folder) and backups, pre-backup analysis and restarts after a crash find files in folders reached through a symbolic link"
+        },
+        {
+          "type": "security",
+          "description": "Release integrity: a tagged build now refuses to publish without Windows Authenticode signing and macOS Developer ID signing + notarization; unsigned test builds use the separate build-test workflow"
+        },
+        {
+          "type": "security",
+          "description": "Secure agent connection endpoints"
+        },
+        {
+          "type": "ui",
+          "description": "Login screen redesigned with the new Everabyte brand: diagonal blue panel with the mountain photo, white connection card, full-width teal sign-in button, and a language dropdown."
+        },
+        {
+          "type": "ui",
+          "description": "Login screen: the landscape photo now fills the whole left panel from top to bottom, dissolving into the connection card, under a blue veil that keeps the copy readable."
+        },
+        {
+          "type": "fix",
+          "description": "Login window: the native title bar is now added to the requested size, so the client matches the 980x616 design exactly and the photo reaches the left edge of the window; the original background picture is restored."
+        },
+        {
+          "type": "ui",
+          "description": "Login screen: the card no longer repeats the logo, its heading reads \" Connect to EverBox\\,"
+        },
+        {
+          "type": "ui",
+          "description": "Restore conflict policy now defaults to keep-both (rename) instead of overwrite"
+        },
+        {
+          "type": "ui",
+          "description": "Écran de connexion avancée entièrement redessiné sur la maquette (onglets Compte Everabyte / Jeton d'enrôlement / Clé API, même fond de marque que la connexion) et boutons uniformes dans toute l'application (primitives partagées, une seule géométrie)"
+        },
+        {
+          "type": "fix",
+          "description": "Bandeau photo de l'ecran de connexion avancee correctement aligne en bas a gauche"
+        },
+        {
+          "type": "ui",
+          "description": "Connexion avancee : colonne gauche lisible sur panneau bleu, photo nette, champs avec placeholders et sans valeur par defaut"
+        },
+        {
+          "type": "ui",
+          "description": "Connexion et connexion avancee : surfaces homogenes, panneau bleu diagonal commun, plus aucune photo d'arriere-plan"
+        },
+        {
+          "type": "fix",
+          "description": "Moteur : cycles de poll serialises (plus de double upload ni de course sur la queue de reprise)"
+        },
+        {
+          "type": "security",
+          "description": "Dependency security audit: zero known advisories (GitHub Pub database); hygiene upgrades crypto/file_picker/sembast/image; restore conflicts keep both by default"
+        },
+        {
+          "type": "ui",
+          "description": "Bucket picker shows the bucket name and its code (auto-provisioned buckets labelled 'Default bucket', mirroring the web console)"
+        },
+        {
+          "type": "ui",
+          "description": "Before backup redesigned on the reference mockup: read-only banner, job picker card, analysis preview with four figures and two proof panels (backed up / skipped with the reason); buttons, colours and panels come from the shared kit"
+        },
+        {
+          "type": "ui",
+          "description": "Resolve screen fully redesigned on the reference mockup: counters, expandable problem cards with detail and affected-files split, action row and handled-issues panel; a new visual-compliance rule (buttons, colours, logo, screen anatomy) written in AGENTS.md."
+        },
+        {
+          "type": "ui",
+          "description": "Backups screen fully redesigned on the reference mockup: page header with Add folder and a page menu, statistics band (protected jobs / next backup / total protected size), search field, All / Protected / Needs attention filters, and job cards with policy tags, protected volume and the schedule / last run / next run trio."
+        },
+        {
+          "type": "ui",
+          "description": "Overview fully redesigned on the reference mockup (header, status band, three tiles, Recovery Radar card with its recovery rail, protected folders and online storage row); the app shell now wears the Login screen colours and logo, and a visual-compliance rule (buttons, colours, logo) is written in AGENTS.md."
+        },
+        {
+          "type": "ui",
+          "description": "Restore screen fully redesigned on the reference mockup: master/detail layout (browser column with search, backup scope and a selectable list; inspector column with the details, the restore options and the single Restore action), a guidance banner, Backups / Restore points tabs, and the live progress and final result next to the action."
+        },
+        {
+          "type": "fix",
+          "description": "Recovery plan link: an api.everabyte.com endpoint now opens the console on app.everabyte.com/ev/backup (was a dead api.everabyte.com page)"
+        },
+        {
+          "type": "ui",
+          "description": "Backups screen: display corrections - headline statistics tiles, bare row kebab (ghost icon button), mockup typography and spacing rhythm, responsive page header (actions move under the title in a narrow window), totals computed from the job cards, and menus driven by the shared EvbMenuButton primitive."
+        },
+        {
+          "type": "fix",
+          "description": "Backups: fixer l'ecran rouge « No Material widget found » au menu de page (la zone de contenu du shell est maintenant une surface Material)"
+        },
+        {
+          "type": "ui",
+          "description": "Remove backup: boutons de confirmation uniformes (Cancel en bouton contour 44 px au lieu d'un lien 32 px) et lisibles"
+        },
+        {
+          "type": "ui",
+          "description": "Boutons et titres unifies : libelle blanc lisible sur le bouton rouge plein, hauteur 44 px pour tout bouton (y compris Cancel des dialogues), titres de vues et de sections alignes sur la hierarchie du kit"
+        },
+        {
+          "type": "ui",
+          "description": "Fix stray dotted underline under titles and text: replaced variable font files with static per-weight font instances"
+        },
+        {
+          "type": "fix",
+          "description": "Per-machine data: dedicated AGENT_FOLDER_ISOLATED error (folder belongs to another PC — clear message instead of a wrong scopes hint)"
+        },
+        {
+          "type": "ui",
+          "description": "Fix stray underline under titles and text (shell chrome was missing its Material, texts fell back to the framework error style) and replace variable fonts with static per-weight instances"
+        },
+        {
+          "type": "fix",
+          "description": "Resolve: previous session's problems (and their affected files) are wiped on account/key change and remote wipe — a new PC session starts clean"
+        },
+        {
+          "type": "feature",
+          "description": "Browse a restore point and restore one file version locally (preview, confirmation, integrity checks)"
+        },
+        {
+          "type": "fix",
+          "description": "Resolve: purge orphaned problems bound to jobs no longer visible to this machine"
+        },
+        {
+          "type": "fix",
+          "description": "History: purge runs of jobs no longer visible to this machine (per-machine isolation)"
+        },
+        {
+          "type": "ui",
+          "description": "Restore is one progressive journey (backup > restore point > files and versions > destination) instead of three tabs; a backup with no restorable data says so and cannot start a restore"
+        },
+        {
+          "type": "fix",
+          "description": "Fixed: a backup that is interrupted (app closed or a server error) no longer forgets what it uploaded — the same file is no longer re-uploaded on every run"
+        },
+        {
+          "type": "fix",
+          "description": "Fixed: History stays empty — a backup run closed by the server while the app was closed is now recorded (status: timed out) instead of being silently discarded"
         }
       ],
       "builds": [
+        {
+          "build": 106,
+          "date": "2026-11-09T14:52:49.446156Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Fixed: History stays empty — a backup run closed by the server while the app was closed is now recorded (status: timed out) instead of being silently discarded"
+            }
+          ]
+        },
+        {
+          "build": 105,
+          "date": "2026-11-09T14:28:31.658225Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Fixed: a backup that is interrupted (app closed or a server error) no longer forgets what it uploaded — the same file is no longer re-uploaded on every run"
+            }
+          ]
+        },
+        {
+          "build": 104,
+          "date": "2026-11-07T17:44:44.362399Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Restore is one progressive journey (backup > restore point > files and versions > destination) instead of three tabs; a backup with no restorable data says so and cannot start a restore"
+            }
+          ]
+        },
+        {
+          "build": 103,
+          "date": "2026-11-07T16:30:28.814939Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "History: purge runs of jobs no longer visible to this machine (per-machine isolation)"
+            }
+          ]
+        },
+        {
+          "build": 102,
+          "date": "2026-11-07T15:57:09.779302Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Resolve: purge orphaned problems bound to jobs no longer visible to this machine"
+            }
+          ]
+        },
+        {
+          "build": 101,
+          "date": "2026-11-07T09:10:02.109573Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Browse a restore point and restore one file version locally (preview, confirmation, integrity checks)"
+            }
+          ]
+        },
+        {
+          "build": 100,
+          "date": "2026-11-06T15:55:26.032865Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Resolve: previous session's problems (and their affected files) are wiped on account/key change and remote wipe — a new PC session starts clean"
+            }
+          ]
+        },
+        {
+          "build": 99,
+          "date": "2026-11-06T15:46:05.690812Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Fix stray underline under titles and text (shell chrome was missing its Material, texts fell back to the framework error style) and replace variable fonts with static per-weight instances"
+            }
+          ]
+        },
+        {
+          "build": 98,
+          "date": "2026-11-06T15:38:04.898434Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Per-machine data: dedicated AGENT_FOLDER_ISOLATED error (folder belongs to another PC — clear message instead of a wrong scopes hint)"
+            }
+          ]
+        },
+        {
+          "build": 97,
+          "date": "2026-11-06T15:15:55.925141Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Fix stray dotted underline under titles and text: replaced variable font files with static per-weight font instances"
+            }
+          ]
+        },
+        {
+          "build": 96,
+          "date": "2026-11-03T18:35:19.452435Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Boutons et titres unifies : libelle blanc lisible sur le bouton rouge plein, hauteur 44 px pour tout bouton (y compris Cancel des dialogues), titres de vues et de sections alignes sur la hierarchie du kit"
+            }
+          ]
+        },
+        {
+          "build": 95,
+          "date": "2026-11-03T14:21:53.194881Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Remove backup: boutons de confirmation uniformes (Cancel en bouton contour 44 px au lieu d'un lien 32 px) et lisibles"
+            }
+          ]
+        },
+        {
+          "build": 94,
+          "date": "2026-11-03T14:04:31.693501Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Backups: fixer l'ecran rouge « No Material widget found » au menu de page (la zone de contenu du shell est maintenant une surface Material)"
+            }
+          ]
+        },
+        {
+          "build": 93,
+          "date": "2026-11-03T13:21:00.492647Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Backups screen: display corrections - headline statistics tiles, bare row kebab (ghost icon button), mockup typography and spacing rhythm, responsive page header (actions move under the title in a narrow window), totals computed from the job cards, and menus driven by the shared EvbMenuButton primitive."
+            }
+          ]
+        },
+        {
+          "build": 92,
+          "date": "2026-11-03T12:33:55.008071Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Recovery plan link: an api.everabyte.com endpoint now opens the console on app.everabyte.com/ev/backup (was a dead api.everabyte.com page)"
+            }
+          ]
+        },
+        {
+          "build": 91,
+          "date": "2026-11-03T12:09:42.889468Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Restore screen fully redesigned on the reference mockup: master/detail layout (browser column with search, backup scope and a selectable list; inspector column with the details, the restore options and the single Restore action), a guidance banner, Backups / Restore points tabs, and the live progress and final result next to the action."
+            }
+          ]
+        },
+        {
+          "build": 90,
+          "date": "2026-11-03T11:50:48.613509Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Overview fully redesigned on the reference mockup (header, status band, three tiles, Recovery Radar card with its recovery rail, protected folders and online storage row); the app shell now wears the Login screen colours and logo, and a visual-compliance rule (buttons, colours, logo) is written in AGENTS.md."
+            }
+          ]
+        },
+        {
+          "build": 89,
+          "date": "2026-11-03T11:48:11.856325Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Backups screen fully redesigned on the reference mockup: page header with Add folder and a page menu, statistics band (protected jobs / next backup / total protected size), search field, All / Protected / Needs attention filters, and job cards with policy tags, protected volume and the schedule / last run / next run trio."
+            }
+          ]
+        },
+        {
+          "build": 88,
+          "date": "2026-11-03T11:37:48.249325Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Resolve screen fully redesigned on the reference mockup: counters, expandable problem cards with detail and affected-files split, action row and handled-issues panel; a new visual-compliance rule (buttons, colours, logo, screen anatomy) written in AGENTS.md."
+            }
+          ]
+        },
+        {
+          "build": 87,
+          "date": "2026-11-03T11:36:17.619932Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Before backup redesigned on the reference mockup: read-only banner, job picker card, analysis preview with four figures and two proof panels (backed up / skipped with the reason); buttons, colours and panels come from the shared kit"
+            }
+          ]
+        },
+        {
+          "build": 86,
+          "date": "2026-11-03T11:09:27.921026Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Bucket picker shows the bucket name and its code (auto-provisioned buckets labelled 'Default bucket', mirroring the web console)"
+            }
+          ]
+        },
+        {
+          "build": 85,
+          "date": "2026-11-03T07:37:10.174621Z",
+          "changes": [
+            {
+              "type": "security",
+              "description": "Dependency security audit: zero known advisories (GitHub Pub database); hygiene upgrades crypto/file_picker/sembast/image; restore conflicts keep both by default"
+            }
+          ]
+        },
+        {
+          "build": 84,
+          "date": "2026-11-03T07:03:20.281545Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Moteur : cycles de poll serialises (plus de double upload ni de course sur la queue de reprise)"
+            }
+          ]
+        },
+        {
+          "build": 83,
+          "date": "2026-11-03T06:47:39.548072Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Connexion et connexion avancee : surfaces homogenes, panneau bleu diagonal commun, plus aucune photo d'arriere-plan"
+            }
+          ]
+        },
+        {
+          "build": 82,
+          "date": "2026-11-03T06:26:34.894547Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Connexion avancee : colonne gauche lisible sur panneau bleu, photo nette, champs avec placeholders et sans valeur par defaut"
+            }
+          ]
+        },
+        {
+          "build": 81,
+          "date": "2026-11-03T01:01:16.385111Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Bandeau photo de l'ecran de connexion avancee correctement aligne en bas a gauche"
+            }
+          ]
+        },
+        {
+          "build": 80,
+          "date": "2026-11-03T00:27:53.384483Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Écran de connexion avancée entièrement redessiné sur la maquette (onglets Compte Everabyte / Jeton d'enrôlement / Clé API, même fond de marque que la connexion) et boutons uniformes dans toute l'application (primitives partagées, une seule géométrie)"
+            }
+          ]
+        },
+        {
+          "build": 79,
+          "date": "2026-11-02T23:13:56.158682Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Restore conflict policy now defaults to keep-both (rename) instead of overwrite"
+            }
+          ]
+        },
+        {
+          "build": 78,
+          "date": "2026-11-02T18:53:30.627381Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Login screen: the card no longer repeats the logo, its heading reads \" Connect to EverBox\\,"
+            }
+          ]
+        },
+        {
+          "build": 77,
+          "date": "2026-11-02T18:18:12.329238Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Login window: the native title bar is now added to the requested size, so the client matches the 980x616 design exactly and the photo reaches the left edge of the window; the original background picture is restored."
+            }
+          ]
+        },
+        {
+          "build": 76,
+          "date": "2026-11-02T17:56:36.790376Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Login screen: the landscape photo now fills the whole left panel from top to bottom, dissolving into the connection card, under a blue veil that keeps the copy readable."
+            }
+          ]
+        },
+        {
+          "build": 75,
+          "date": "2026-11-02T17:21:44.436280Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Login screen redesigned with the new Everabyte brand: diagonal blue panel with the mountain photo, white connection card, full-width teal sign-in button, and a language dropdown."
+            }
+          ]
+        },
+        {
+          "build": 74,
+          "date": "2026-10-29T09:14:50.771951Z",
+          "changes": [
+            {
+              "type": "security",
+              "description": "Secure agent connection endpoints"
+            }
+          ]
+        },
+        {
+          "build": 73,
+          "date": "2026-10-28T20:47:12.309018Z",
+          "changes": [
+            {
+              "type": "security",
+              "description": "Release integrity: a tagged build now refuses to publish without Windows Authenticode signing and macOS Developer ID signing + notarization; unsigned test builds use the separate build-test workflow"
+            }
+          ]
+        },
         {
           "build": 72,
           "date": "2026-10-22T16:34:51.831580Z",
@@ -959,6 +1435,274 @@
             {
               "type": "fix",
               "description": "The source tree is now preserved for EVERY backup (the folders assigned before this feature keep their name too): the switch is a manifest re-key, not a re-upload. The machine hostname is displayed in Settings."
+            }
+          ]
+        }
+      ]
+    },
+    "1.7.0": {
+      "build": 14,
+      "date": "2026-11-19T20:05:50.974465Z",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Update available is announced in-app (banner) and in the tray with a one-click Update now that quits the app for the install; the source picker suggests your standard folders like Google Drive; a folder no longer on this device is flagged on the backup card and can be removed without deleting the cloud copies"
+        },
+        {
+          "type": "fix",
+          "description": "Version numbering now follows the standard: the build counts 1 to 100 within a version line; past 100 the minor version takes over and the counter restarts at 1 (1.6.2+100 becomes 1.7.0+1, never 1.6.2+101); a version bump never carries the previous line's counter"
+        },
+        {
+          "type": "ui",
+          "description": "Navigation : etat des pages preserve entre onglets, raccourcis Ctrl+1-9, dernier onglet restaure au lancement, ouverture directe d'un ecran depuis le tray"
+        },
+        {
+          "type": "fix",
+          "description": "The Add backup dialog no longer shows the server's raw SQL when starting protection fails: a human message is shown, the technical dump stays collapsed under 'Technical details', and the dialog scrolls instead of overflowing; the Review step's 'add.folder' raw label is fixed"
+        },
+        {
+          "type": "feature",
+          "description": "P5 zero-knowledge: client-side E2EE crypto module in backup_core (key generation, EVB1 chunked codec contract, per-chunk nonce derivation)"
+        },
+        {
+          "type": "feature",
+          "description": "P5: real AES-256-GCM codec in backup_core via package:cryptography (encryptAsync/decryptAsync, EVB1 chunked, tamper detection)"
+        },
+        {
+          "type": "feature",
+          "description": "P5 (3/3): E2EE pipeline + API client for agent-side encryption (encryptForUpload/decryptFromDownload with real AES-256-GCM, envelope attach/fetch, key wrap enrollment)"
+        },
+        {
+          "type": "feature",
+          "description": "P5 finale: E2eeAgentApi upload decorator (encrypt→upload→attach envelope) + decryptDownloadedEntry for restore, 3 wiring tests"
+        },
+        {
+          "type": "security",
+          "description": "Real crypto: X25519 ephemeral + HKDF-SHA256 + AES-256-GCM for DEK envelope, PBKDF2-SHA512 for mnemonic unwrap, HKDF device key wrap — stubs replaced"
+        },
+        {
+          "type": "security",
+          "description": "ML-KEM-768 (FIPS 203) hybrid via pqcrypto — full cross-platform interop (browser+agent+mobile), X25519+ML-KEM+HKDF+AES-GCM DEK envelope"
+        },
+        {
+          "type": "fix",
+          "description": "Align agent E2EE content format to the canonical 16-byte EVB1 header (web + Rust SDK byte-exact)"
+        },
+        {
+          "type": "security",
+          "description": "Require client-side encryption for all uploads and fail closed on unknown policy"
+        },
+        {
+          "type": "feature",
+          "description": "E2EE uploads keep the real file and folder names server-side (plaintext durability rule)"
+        },
+        {
+          "type": "fix",
+          "description": "Les restores de backup déchiffrent les fichiers E2EE avant le contrôle d'intégrité"
+        }
+      ],
+      "builds": [
+        {
+          "build": 14,
+          "date": "2026-11-19T20:05:50.974465Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Les restores de backup déchiffrent les fichiers E2EE avant le contrôle d'intégrité"
+            }
+          ]
+        },
+        {
+          "build": 13,
+          "date": "2026-11-13T23:02:33.791440Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "E2EE uploads keep the real file and folder names server-side (plaintext durability rule)"
+            }
+          ]
+        },
+        {
+          "build": 12,
+          "date": "2026-11-13T21:37:00.359894Z",
+          "changes": [
+            {
+              "type": "security",
+              "description": "Require client-side encryption for all uploads and fail closed on unknown policy"
+            }
+          ]
+        },
+        {
+          "build": 11,
+          "date": "2026-11-12T17:39:09.626056Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Align agent E2EE content format to the canonical 16-byte EVB1 header (web + Rust SDK byte-exact)"
+            }
+          ]
+        },
+        {
+          "build": 10,
+          "date": "2026-11-11T19:26:12.763173Z",
+          "changes": [
+            {
+              "type": "security",
+              "description": "ML-KEM-768 (FIPS 203) hybrid via pqcrypto — full cross-platform interop (browser+agent+mobile), X25519+ML-KEM+HKDF+AES-GCM DEK envelope"
+            }
+          ]
+        },
+        {
+          "build": 9,
+          "date": "2026-11-11T17:54:43.257909Z",
+          "changes": [
+            {
+              "type": "security",
+              "description": "Real crypto: X25519 ephemeral + HKDF-SHA256 + AES-256-GCM for DEK envelope, PBKDF2-SHA512 for mnemonic unwrap, HKDF device key wrap — stubs replaced"
+            }
+          ]
+        },
+        {
+          "build": 8,
+          "date": "2026-11-10T19:39:53.627253Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "P5 finale: E2eeAgentApi upload decorator (encrypt→upload→attach envelope) + decryptDownloadedEntry for restore, 3 wiring tests"
+            }
+          ]
+        },
+        {
+          "build": 7,
+          "date": "2026-11-10T19:21:10.604396Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "P5 (3/3): E2EE pipeline + API client for agent-side encryption (encryptForUpload/decryptFromDownload with real AES-256-GCM, envelope attach/fetch, key wrap enrollment)"
+            }
+          ]
+        },
+        {
+          "build": 6,
+          "date": "2026-11-10T17:21:55.542188Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "P5: real AES-256-GCM codec in backup_core via package:cryptography (encryptAsync/decryptAsync, EVB1 chunked, tamper detection)"
+            }
+          ]
+        },
+        {
+          "build": 5,
+          "date": "2026-11-10T17:11:58.093529Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "P5 zero-knowledge: client-side E2EE crypto module in backup_core (key generation, EVB1 chunked codec contract, per-chunk nonce derivation)"
+            }
+          ]
+        },
+        {
+          "build": 4,
+          "date": "2026-11-09T23:48:01.782375Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "The Add backup dialog no longer shows the server's raw SQL when starting protection fails: a human message is shown, the technical dump stays collapsed under 'Technical details', and the dialog scrolls instead of overflowing; the Review step's 'add.folder' raw label is fixed"
+            }
+          ]
+        },
+        {
+          "build": 3,
+          "date": "2026-11-09T23:25:45.975267Z",
+          "changes": [
+            {
+              "type": "ui",
+              "description": "Navigation : etat des pages preserve entre onglets, raccourcis Ctrl+1-9, dernier onglet restaure au lancement, ouverture directe d'un ecran depuis le tray"
+            }
+          ]
+        },
+        {
+          "build": 2,
+          "date": "2026-11-09T18:04:18.433925Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Version numbering now follows the standard: the build counts 1 to 100 within a version line; past 100 the minor version takes over and the counter restarts at 1 (1.6.2+100 becomes 1.7.0+1, never 1.6.2+101); a version bump never carries the previous line's counter"
+            }
+          ]
+        },
+        {
+          "build": 1,
+          "date": "2026-11-09T17:27:26.378431Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Update available is announced in-app (banner) and in the tray with a one-click Update now that quits the app for the install; the source picker suggests your standard folders like Google Drive; a folder no longer on this device is flagged on the backup card and can be removed without deleting the cloud copies"
+            }
+          ]
+        }
+      ]
+    },
+    "1.7.1": {
+      "build": 4,
+      "date": "2026-11-20T23:05:28.746869Z",
+      "changes": [
+        {
+          "type": "maintenance",
+          "description": "Synchronisation de la source de version avec la version déjà publiée 1.7.1+1"
+        },
+        {
+          "type": "fix",
+          "description": "Les restores de backup déchiffrent les fichiers E2EE avant le contrôle d'intégrité"
+        },
+        {
+          "type": "security",
+          "description": "Encrypted uploads and backup manifests travel under opaque aliases - real names and raw sha256 never reach the server"
+        },
+        {
+          "type": "feature",
+          "description": "Uploads send the real file extension as a multipart field (mandatory ext_file server-side)"
+        }
+      ],
+      "builds": [
+        {
+          "build": 4,
+          "date": "2026-11-20T23:05:28.746869Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Uploads send the real file extension as a multipart field (mandatory ext_file server-side)"
+            }
+          ]
+        },
+        {
+          "build": 3,
+          "date": "2026-11-20T20:40:30.901311Z",
+          "changes": [
+            {
+              "type": "security",
+              "description": "Encrypted uploads and backup manifests travel under opaque aliases - real names and raw sha256 never reach the server"
+            }
+          ]
+        },
+        {
+          "build": 2,
+          "date": "2026-11-19T20:11:20.871152Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Les restores de backup déchiffrent les fichiers E2EE avant le contrôle d'intégrité"
+            }
+          ]
+        },
+        {
+          "build": 1,
+          "date": "2026-11-19T20:11:18.546454Z",
+          "changes": [
+            {
+              "type": "maintenance",
+              "description": "Synchronisation de la source de version avec la version déjà publiée 1.7.1+1"
             }
           ]
         }
