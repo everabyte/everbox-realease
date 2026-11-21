@@ -278,7 +278,7 @@
         },
         {
           "type": "feature",
-          "description": "Recovery Radar v1.6: realistic rename/extension detection with univoque pairing, extended entropy sampling, persisted per-account incident notifications, secure console URL resolution, enriched radar card (analysis state, estimate interval, mini timeline)"
+          "description": "Recovery Radar v1.6: realistic rename/extension detection with unambiguous pairing, extended entropy sampling, persisted per-account incident notifications, secure console URL resolution, enriched radar card (analysis state, estimate interval, mini timeline)"
         },
         {
           "type": "fix",
@@ -318,7 +318,7 @@
         },
         {
           "type": "security",
-          "description": "Renforce la protection des chemins de restauration et bloque les téléchargements dépassant la taille attendue."
+          "description": "Hardened restore path protection and blocked downloads exceeding the expected size."
         },
         {
           "type": "feature",
@@ -398,7 +398,7 @@
           "changes": [
             {
               "type": "security",
-              "description": "Renforce la protection des chemins de restauration et bloque les téléchargements dépassant la taille attendue."
+              "description": "Hardened restore path protection and blocked downloads exceeding the expected size."
             }
           ]
         },
@@ -492,7 +492,7 @@
           "changes": [
             {
               "type": "feature",
-              "description": "Recovery Radar v1.6: realistic rename/extension detection with univoque pairing, extended entropy sampling, persisted per-account incident notifications, secure console URL resolution, enriched radar card (analysis state, estimate interval, mini timeline)"
+              "description": "Recovery Radar v1.6: realistic rename/extension detection with unambiguous pairing, extended entropy sampling, persisted per-account incident notifications, secure console URL resolution, enriched radar card (analysis state, estimate interval, mini timeline)"
             }
           ]
         },
@@ -720,7 +720,7 @@
         },
         {
           "type": "ui",
-          "description": "Upload speed: jauge continue en Mbps jusqu'a 1 Gbps (Unlimited toujours affiche)"
+          "description": "Upload speed: continuous gauge in Mbps up to 1 Gbps (Unlimited always shown)"
         },
         {
           "type": "ui",
@@ -758,7 +758,7 @@
           "changes": [
             {
               "type": "ui",
-              "description": "Upload speed: jauge continue en Mbps jusqu'a 1 Gbps (Unlimited toujours affiche)"
+              "description": "Upload speed: continuous gauge in Mbps up to 1 Gbps (Unlimited always shown)"
             }
           ]
         },
@@ -882,7 +882,7 @@
         },
         {
           "type": "fix",
-          "description": "Reliable restore: a non-empty restore can never succeed over an empty or incomplete plan; explicit destination choice (original location or picked folder) with live progress and final result; keep-both conflicts now write nom_backup.ext"
+          "description": "Reliable restore: a non-empty restore can never succeed over an empty or incomplete plan; explicit destination choice (original location or picked folder) with live progress and final result; keep-both conflicts now write <name>_backup.ext"
         },
         {
           "type": "fix",
@@ -930,23 +930,23 @@
         },
         {
           "type": "ui",
-          "description": "Écran de connexion avancée entièrement redessiné sur la maquette (onglets Compte Everabyte / Jeton d'enrôlement / Clé API, même fond de marque que la connexion) et boutons uniformes dans toute l'application (primitives partagées, une seule géométrie)"
+          "description": "Advanced connection screen fully redesigned on the mockup (Everabyte account / enrollment token / API key tabs, same brand background as the sign-in screen) and uniform buttons across the whole app (shared primitives, one single geometry)"
         },
         {
           "type": "fix",
-          "description": "Bandeau photo de l'ecran de connexion avancee correctement aligne en bas a gauche"
+          "description": "Photo banner of the advanced connection screen correctly aligned at the bottom left"
         },
         {
           "type": "ui",
-          "description": "Connexion avancee : colonne gauche lisible sur panneau bleu, photo nette, champs avec placeholders et sans valeur par defaut"
+          "description": "Advanced connection: readable left column on the blue panel, sharp photo, fields with placeholders and no default values"
         },
         {
           "type": "ui",
-          "description": "Connexion et connexion avancee : surfaces homogenes, panneau bleu diagonal commun, plus aucune photo d'arriere-plan"
+          "description": "Sign-in and advanced connection: homogeneous surfaces, shared diagonal blue panel, no more background photos"
         },
         {
           "type": "fix",
-          "description": "Moteur : cycles de poll serialises (plus de double upload ni de course sur la queue de reprise)"
+          "description": "Engine: poll cycles are serialized (no more double uploads or races on the resume queue)"
         },
         {
           "type": "security",
@@ -986,15 +986,15 @@
         },
         {
           "type": "fix",
-          "description": "Backups: fixer l'ecran rouge « No Material widget found » au menu de page (la zone de contenu du shell est maintenant une surface Material)"
+          "description": "Backups: fixed the red \"No Material widget found\" screen at the page menu (the shell's content area is now a Material surface)"
         },
         {
           "type": "ui",
-          "description": "Remove backup: boutons de confirmation uniformes (Cancel en bouton contour 44 px au lieu d'un lien 32 px) et lisibles"
+          "description": "Remove backup: uniform, readable confirmation buttons (Cancel as a 44 px outlined button instead of a 32 px link)"
         },
         {
           "type": "ui",
-          "description": "Boutons et titres unifies : libelle blanc lisible sur le bouton rouge plein, hauteur 44 px pour tout bouton (y compris Cancel des dialogues), titres de vues et de sections alignes sur la hierarchie du kit"
+          "description": "Buttons and titles unified: readable white label on the solid red button, 44 px height for every button (including dialog Cancel), view and section titles aligned on the kit's hierarchy"
         },
         {
           "type": "ui",
@@ -1144,7 +1144,7 @@
           "changes": [
             {
               "type": "ui",
-              "description": "Boutons et titres unifies : libelle blanc lisible sur le bouton rouge plein, hauteur 44 px pour tout bouton (y compris Cancel des dialogues), titres de vues et de sections alignes sur la hierarchie du kit"
+              "description": "Buttons and titles unified: readable white label on the solid red button, 44 px height for every button (including dialog Cancel), view and section titles aligned on the kit's hierarchy"
             }
           ]
         },
@@ -1154,7 +1154,7 @@
           "changes": [
             {
               "type": "ui",
-              "description": "Remove backup: boutons de confirmation uniformes (Cancel en bouton contour 44 px au lieu d'un lien 32 px) et lisibles"
+              "description": "Remove backup: uniform, readable confirmation buttons (Cancel as a 44 px outlined button instead of a 32 px link)"
             }
           ]
         },
@@ -1164,7 +1164,7 @@
           "changes": [
             {
               "type": "fix",
-              "description": "Backups: fixer l'ecran rouge « No Material widget found » au menu de page (la zone de contenu du shell est maintenant une surface Material)"
+              "description": "Backups: fixed the red \"No Material widget found\" screen at the page menu (the shell's content area is now a Material surface)"
             }
           ]
         },
@@ -1264,7 +1264,7 @@
           "changes": [
             {
               "type": "fix",
-              "description": "Moteur : cycles de poll serialises (plus de double upload ni de course sur la queue de reprise)"
+              "description": "Engine: poll cycles are serialized (no more double uploads or races on the resume queue)"
             }
           ]
         },
@@ -1274,7 +1274,7 @@
           "changes": [
             {
               "type": "ui",
-              "description": "Connexion et connexion avancee : surfaces homogenes, panneau bleu diagonal commun, plus aucune photo d'arriere-plan"
+              "description": "Sign-in and advanced connection: homogeneous surfaces, shared diagonal blue panel, no more background photos"
             }
           ]
         },
@@ -1284,7 +1284,7 @@
           "changes": [
             {
               "type": "ui",
-              "description": "Connexion avancee : colonne gauche lisible sur panneau bleu, photo nette, champs avec placeholders et sans valeur par defaut"
+              "description": "Advanced connection: readable left column on the blue panel, sharp photo, fields with placeholders and no default values"
             }
           ]
         },
@@ -1294,7 +1294,7 @@
           "changes": [
             {
               "type": "fix",
-              "description": "Bandeau photo de l'ecran de connexion avancee correctement aligne en bas a gauche"
+              "description": "Photo banner of the advanced connection screen correctly aligned at the bottom left"
             }
           ]
         },
@@ -1304,7 +1304,7 @@
           "changes": [
             {
               "type": "ui",
-              "description": "Écran de connexion avancée entièrement redessiné sur la maquette (onglets Compte Everabyte / Jeton d'enrôlement / Clé API, même fond de marque que la connexion) et boutons uniformes dans toute l'application (primitives partagées, une seule géométrie)"
+              "description": "Advanced connection screen fully redesigned on the mockup (Everabyte account / enrollment token / API key tabs, same brand background as the sign-in screen) and uniform buttons across the whole app (shared primitives, one single geometry)"
             }
           ]
         },
@@ -1424,7 +1424,7 @@
           "changes": [
             {
               "type": "fix",
-              "description": "Reliable restore: a non-empty restore can never succeed over an empty or incomplete plan; explicit destination choice (original location or picked folder) with live progress and final result; keep-both conflicts now write nom_backup.ext"
+              "description": "Reliable restore: a non-empty restore can never succeed over an empty or incomplete plan; explicit destination choice (original location or picked folder) with live progress and final result; keep-both conflicts now write <name>_backup.ext"
             }
           ]
         },
@@ -1454,7 +1454,7 @@
         },
         {
           "type": "ui",
-          "description": "Navigation : etat des pages preserve entre onglets, raccourcis Ctrl+1-9, dernier onglet restaure au lancement, ouverture directe d'un ecran depuis le tray"
+          "description": "Navigation: page state preserved across tabs, Ctrl+1-9 shortcuts, last tab restored at launch, and direct navigation to a screen from the tray"
         },
         {
           "type": "fix",
@@ -1498,7 +1498,7 @@
         },
         {
           "type": "fix",
-          "description": "Les restores de backup déchiffrent les fichiers E2EE avant le contrôle d'intégrité"
+          "description": "Backup restores now decrypt E2EE files before the integrity check"
         }
       ],
       "builds": [
@@ -1508,7 +1508,7 @@
           "changes": [
             {
               "type": "fix",
-              "description": "Les restores de backup déchiffrent les fichiers E2EE avant le contrôle d'intégrité"
+              "description": "Backup restores now decrypt E2EE files before the integrity check"
             }
           ]
         },
@@ -1618,7 +1618,7 @@
           "changes": [
             {
               "type": "ui",
-              "description": "Navigation : etat des pages preserve entre onglets, raccourcis Ctrl+1-9, dernier onglet restaure au lancement, ouverture directe d'un ecran depuis le tray"
+              "description": "Navigation: page state preserved across tabs, Ctrl+1-9 shortcuts, last tab restored at launch, and direct navigation to a screen from the tray"
             }
           ]
         },
@@ -1650,11 +1650,11 @@
       "changes": [
         {
           "type": "maintenance",
-          "description": "Synchronisation de la source de version avec la version déjà publiée 1.7.1+1"
+          "description": "Synchronized the version source with the already-published 1.7.1+1"
         },
         {
           "type": "fix",
-          "description": "Les restores de backup déchiffrent les fichiers E2EE avant le contrôle d'intégrité"
+          "description": "Backup restores now decrypt E2EE files before the integrity check"
         },
         {
           "type": "security",
@@ -1692,7 +1692,7 @@
           "changes": [
             {
               "type": "fix",
-              "description": "Les restores de backup déchiffrent les fichiers E2EE avant le contrôle d'intégrité"
+              "description": "Backup restores now decrypt E2EE files before the integrity check"
             }
           ]
         },
@@ -1702,7 +1702,7 @@
           "changes": [
             {
               "type": "maintenance",
-              "description": "Synchronisation de la source de version avec la version déjà publiée 1.7.1+1"
+              "description": "Synchronized the version source with the already-published 1.7.1+1"
             }
           ]
         }
