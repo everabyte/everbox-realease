@@ -1707,6 +1707,290 @@
           ]
         }
       ]
+    },
+    "1.7.2": {
+      "build": 1,
+      "date": "2026-11-21T08:29:49.644844Z",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Fix E2EE device enrollment: the API no longer sends a bogus step-up token when attaching the device key wrap (server accepts device wraps from API-key sessions without step-up). Backups can now enroll and run on zero-knowledge accounts."
+        }
+      ],
+      "builds": [
+        {
+          "build": 1,
+          "date": "2026-11-21T08:29:49.644844Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Fix E2EE device enrollment: the API no longer sends a bogus step-up token when attaching the device key wrap (server accepts device wraps from API-key sessions without step-up). Backups can now enroll and run on zero-knowledge accounts."
+            }
+          ]
+        }
+      ]
+    },
+    "1.8.0": {
+      "build": 2,
+      "date": "2026-11-21T10:52:10.813231Z",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Company backups for everyone: files uploaded into a company bucket now wrap their key a second time to the company encryption key, so the owner and every member can open them on web, Android and this agent. Restores decrypt company files too. Personal backups are unchanged."
+        },
+        {
+          "type": "fix",
+          "description": "Fix a crash when opening Settings > Private encryption: the section rendered a scrollable inside the page's scrollable (unbounded height). The enrollment screen now displays correctly."
+        }
+      ],
+      "builds": [
+        {
+          "build": 2,
+          "date": "2026-11-21T10:52:10.813231Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Fix a crash when opening Settings > Private encryption: the section rendered a scrollable inside the page's scrollable (unbounded height). The enrollment screen now displays correctly."
+            }
+          ]
+        },
+        {
+          "build": 1,
+          "date": "2026-11-21T09:42:56.757161Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Company backups for everyone: files uploaded into a company bucket now wrap their key a second time to the company encryption key, so the owner and every member can open them on web, Android and this agent. Restores decrypt company files too. Personal backups are unchanged."
+            }
+          ]
+        }
+      ]
+    },
+    "1.9.0": {
+      "build": 1,
+      "date": "2026-11-21T12:37:40.892080Z",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "The agent now asks for the 12-word recovery phrase right after connecting (zero-knowledge accounts), keeps a banner until enrolled, and accepts the recovery phrase file pasted wholesale (header, numbering and footer are tolerated)."
+        }
+      ],
+      "builds": [
+        {
+          "build": 1,
+          "date": "2026-11-21T12:37:40.892080Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "The agent now asks for the 12-word recovery phrase right after connecting (zero-knowledge accounts), keeps a banner until enrolled, and accepts the recovery phrase file pasted wholesale (header, numbering and footer are tolerated)."
+            }
+          ]
+        }
+      ]
+    },
+    "1.9.1": {
+      "build": 4,
+      "date": "2026-11-21T16:04:15.952349Z",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Fix: activation with a freshly regenerated recovery phrase no longer fails — the agent now tries every mnemonic wrap (regeneration adds a new one without revoking the old), and numbered word-grid pastes without punctuation are extracted too."
+        },
+        {
+          "type": "fix",
+          "description": "Private encryption credentials are isolated per account, and backups stay blocked until the account is enrolled with its recovery phrase."
+        },
+        {
+          "type": "feature",
+          "description": "Pair agent devices through encrypted web approval"
+        },
+        {
+          "type": "fix",
+          "description": "Fix: text no longer drops out of frames on Windows — the app falls back to the Skia renderer until the default Impeller renderer's glyph atlas bug (Frame bounds are not present in the atlas) is fixed upstream."
+        }
+      ],
+      "builds": [
+        {
+          "build": 4,
+          "date": "2026-11-21T16:04:15.952349Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Fix: text no longer drops out of frames on Windows — the app falls back to the Skia renderer until the default Impeller renderer's glyph atlas bug (Frame bounds are not present in the atlas) is fixed upstream."
+            }
+          ]
+        },
+        {
+          "build": 3,
+          "date": "2026-11-21T15:02:33.401465Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Pair agent devices through encrypted web approval"
+            }
+          ]
+        },
+        {
+          "build": 2,
+          "date": "2026-11-21T13:45:21.558309Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Private encryption credentials are isolated per account, and backups stay blocked until the account is enrolled with its recovery phrase."
+            }
+          ]
+        },
+        {
+          "build": 1,
+          "date": "2026-11-21T13:27:45.077873Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Fix: activation with a freshly regenerated recovery phrase no longer fails — the agent now tries every mnemonic wrap (regeneration adds a new one without revoking the old), and numbered word-grid pastes without punctuation are extracted too."
+            }
+          ]
+        }
+      ]
+    },
+    "1.9.2": {
+      "build": 1,
+      "date": "2026-11-21T19:14:44.289811Z",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Dead ciphertext cleanup: a failed E2EE envelope attach after a successful upload now hard-deletes the row best-effort (P2-A mirror of the web pipeline) instead of leaving orphan evb- objects on every failed run."
+        }
+      ],
+      "builds": [
+        {
+          "build": 1,
+          "date": "2026-11-21T19:14:44.289811Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Dead ciphertext cleanup: a failed E2EE envelope attach after a successful upload now hard-deletes the row best-effort (P2-A mirror of the web pipeline) instead of leaving orphan evb- objects on every failed run."
+            }
+          ]
+        }
+      ]
+    },
+    "1.9.3": {
+      "build": 2,
+      "date": "2026-11-22T19:31:59.369940Z",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Honest enrollment feedback: network or server failures no longer show 'Invalid recovery phrase' (one cause = one message), and the device-pairing card is translated with a help tooltip explaining the fingerprint"
+        },
+        {
+          "type": "fix",
+          "description": "Enrollment hints point to the real web paths: Settings > Security > Client-side encryption (unlock before approving) and its Recovery phrase card for saving or replacing the 12 words"
+        }
+      ],
+      "builds": [
+        {
+          "build": 2,
+          "date": "2026-11-22T19:31:59.369940Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Enrollment hints point to the real web paths: Settings > Security > Client-side encryption (unlock before approving) and its Recovery phrase card for saving or replacing the 12 words"
+            }
+          ]
+        },
+        {
+          "build": 1,
+          "date": "2026-11-22T19:03:36.621013Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Honest enrollment feedback: network or server failures no longer show 'Invalid recovery phrase' (one cause = one message), and the device-pairing card is translated with a help tooltip explaining the fingerprint"
+            }
+          ]
+        }
+      ]
+    },
+    "1.10.0": {
+      "build": 2,
+      "date": "2026-11-22T22:55:32.692642Z",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Point restores no longer fail after a late E2EE enrollment: the engine now resolves the encryption pipeline per restore instead of freezing it at startup, and mixed plans decrypt file by file"
+        },
+        {
+          "type": "fix",
+          "description": "Restoring an older version of a file works again on end-to-end encrypted accounts (integrity is enforced by decryption authentication and the size gate)"
+        },
+        {
+          "type": "ui",
+          "description": "The Restore screen is now a two-step journey: the restore points of every backup in one newest-first list, an optional collapsed file browser, and a lighter details panel"
+        },
+        {
+          "type": "fix",
+          "description": "Restore fixed and simplified: late E2EE enrollment no longer breaks point restores, historical file versions restore again, and the screen is now a two-step journey"
+        },
+        {
+          "type": "fix",
+          "description": "Trial uploads no longer show a false Remote storage is full: server-side storage reservation rejections are reported honestly, plan quota errors are classified correctly, and the trial 100 MB per-file message from the server is shown"
+        }
+      ],
+      "builds": [
+        {
+          "build": 2,
+          "date": "2026-11-22T22:55:32.692642Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Restore fixed and simplified: late E2EE enrollment no longer breaks point restores, historical file versions restore again, and the screen is now a two-step journey"
+            },
+            {
+              "type": "fix",
+              "description": "Trial uploads no longer show a false Remote storage is full: server-side storage reservation rejections are reported honestly, plan quota errors are classified correctly, and the trial 100 MB per-file message from the server is shown"
+            }
+          ]
+        },
+        {
+          "build": 1,
+          "date": "2026-11-22T21:18:08.195080Z",
+          "changes": [
+            {
+              "type": "fix",
+              "description": "Point restores no longer fail after a late E2EE enrollment: the engine now resolves the encryption pipeline per restore instead of freezing it at startup, and mixed plans decrypt file by file"
+            },
+            {
+              "type": "fix",
+              "description": "Restoring an older version of a file works again on end-to-end encrypted accounts (integrity is enforced by decryption authentication and the size gate)"
+            },
+            {
+              "type": "ui",
+              "description": "The Restore screen is now a two-step journey: the restore points of every backup in one newest-first list, an optional collapsed file browser, and a lighter details panel"
+            }
+          ]
+        }
+      ]
+    },
+    "1.11.0": {
+      "build": 1,
+      "date": "2026-11-22T23:09:09.775509Z",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Code-first device activation: pairing code hero with collapsed recovery-phrase fallback, full-screen navigation lock until the device is approved"
+        }
+      ],
+      "builds": [
+        {
+          "build": 1,
+          "date": "2026-11-22T23:09:09.775509Z",
+          "changes": [
+            {
+              "type": "feature",
+              "description": "Code-first device activation: pairing code hero with collapsed recovery-phrase fallback, full-screen navigation lock until the device is approved"
+            }
+          ]
+        }
+      ]
     }
   }
 }
